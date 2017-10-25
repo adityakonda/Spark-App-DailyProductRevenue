@@ -7,8 +7,20 @@
 		revision="1.0"
 		conf="runtime"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20171002110713"/>
+		date="20171025162932"/>
 	<dependencies>
+		<module organisation="mysql" name="mysql-connector-java">
+			<revision name="5.1.6" status="release" pubdate="20150508065546" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dev.mysql.com/doc/connector-j/en/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="139">
+				<license name="The GNU General Public License, Version 2" url="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"/>
+				<metadata-artifact status="no" details="" size="2567" time="0" location="C:\Users\adity\.ivy2\cache\mysql\mysql-connector-java\ivy-5.1.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.pom"/>
+				<caller organisation="default" name="spark_applications_2.11" conf="compile, runtime" rev="5.1.6" rev-constraint-default="5.1.6" rev-constraint-dynamic="5.1.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="mysql-connector-java" type="jar" ext="jar" status="no" details="" size="703265" time="0" location="C:\Users\adity\.ivy2\cache\mysql\mysql-connector-java\jars\mysql-connector-java-5.1.6.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.6/mysql-connector-java-5.1.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.scala-lang" name="scalap">
 			<revision name="2.11.8" status="release" pubdate="20160304102657" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="105">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
@@ -73,10 +85,10 @@
 		<module organisation="org.apache.spark" name="spark-core_2.10">
 			<revision name="2.2.0" status="release" pubdate="20170630203202" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="1">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="21322" time="268" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-core_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-core_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.10/2.2.0/spark-core_2.10-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="21322" time="289" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-core_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-core_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.10/2.2.0/spark-core_2.10-2.2.0.pom"/>
 				<caller organisation="default" name="spark_applications_2.11" conf="compile, runtime" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="spark-core_2.10" type="jar" ext="jar" status="successful" details="" size="12340124" time="4720" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-core_2.10\jars\spark-core_2.10-2.2.0.jar">
+					<artifact name="spark-core_2.10" type="jar" ext="jar" status="no" details="" size="12340124" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-core_2.10\jars\spark-core_2.10-2.2.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/spark/spark-core_2.10/2.2.0/spark-core_2.10-2.2.0.jar"/>
 					</artifact>
 				</artifacts>
@@ -190,14 +202,14 @@
 			</revision>
 		</module>
 		<module organisation="io.netty" name="netty">
-			<revision name="3.9.9.Final" status="release" pubdate="20150721040220" resolver="public" artresolver="public" homepage="http://netty.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="46">
+			<revision name="3.9.9.Final" status="release" pubdate="20150721040220" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://netty.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="46">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="28828" time="203" location="C:\Users\adity\.ivy2\cache\io.netty\netty\ivy-3.9.9.Final.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\io.netty\netty\ivy-3.9.9.Final.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty/3.9.9.Final/netty-3.9.9.Final.pom"/>
+				<metadata-artifact status="no" details="" size="7262" time="0" location="C:\Users\adity\.ivy2\cache\io.netty\netty\ivy-3.9.9.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty/3.9.9.Final/netty-3.9.9.Final.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-hdfs" conf="compile, runtime" rev="3.6.2.Final" rev-constraint-default="3.6.2.Final" rev-constraint-dynamic="3.6.2.Final" callerrev="2.6.5"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="3.9.9.Final" rev-constraint-default="3.9.9.Final" rev-constraint-dynamic="3.9.9.Final" callerrev="2.2.0"/>
 				<caller organisation="org.apache.zookeeper" name="zookeeper" conf="compile, runtime" rev="3.7.0.Final" rev-constraint-default="3.7.0.Final" rev-constraint-dynamic="3.7.0.Final" callerrev="3.4.6"/>
 				<artifacts>
-					<artifact name="netty" type="bundle" ext="jar" status="successful" details="" size="1330219" time="515" location="C:\Users\adity\.ivy2\cache\io.netty\netty\bundles\netty-3.9.9.Final.jar">
+					<artifact name="netty" type="bundle" ext="jar" status="no" details="" size="1330219" time="0" location="C:\Users\adity\.ivy2\cache\io.netty\netty\bundles\netty-3.9.9.Final.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty/3.9.9.Final/netty-3.9.9.Final.jar"/>
 					</artifact>
 				</artifacts>
@@ -629,36 +641,36 @@
 			</revision>
 		</module>
 		<module organisation="net.java.dev.jets3t" name="jets3t">
-			<revision name="0.9.3" status="release" pubdate="20150131164344" resolver="public" artresolver="public" homepage="https://bitbucket.org/jmurty/jets3t/overview" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="85">
+			<revision name="0.9.3" status="release" pubdate="20150131164344" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://bitbucket.org/jmurty/jets3t/overview" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="85">
 				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="15945" time="189" location="C:\Users\adity\.ivy2\cache\net.java.dev.jets3t\jets3t\ivy-0.9.3.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\net.java.dev.jets3t\jets3t\ivy-0.9.3.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/java/dev/jets3t/jets3t/0.9.3/jets3t-0.9.3.pom"/>
+				<metadata-artifact status="no" details="" size="6491" time="0" location="C:\Users\adity\.ivy2\cache\net.java.dev.jets3t\jets3t\ivy-0.9.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/java/dev/jets3t/jets3t/0.9.3/jets3t-0.9.3.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="0.9.3" rev-constraint-default="0.9.3" rev-constraint-dynamic="0.9.3" callerrev="2.2.0"/>
 				<artifacts>
-					<artifact name="jets3t" type="jar" ext="jar" status="successful" details="" size="2041628" time="781" location="C:\Users\adity\.ivy2\cache\net.java.dev.jets3t\jets3t\jars\jets3t-0.9.3.jar">
+					<artifact name="jets3t" type="jar" ext="jar" status="no" details="" size="2041628" time="0" location="C:\Users\adity\.ivy2\cache\net.java.dev.jets3t\jets3t\jars\jets3t-0.9.3.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/java/dev/jets3t/jets3t/0.9.3/jets3t-0.9.3.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.jamesmurty.utils" name="java-xmlbuilder">
-			<revision name="1.0" status="release" pubdate="20140306090737" resolver="public" artresolver="public" homepage="https://github.com/jmurty/java-xmlbuilder" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="93">
+			<revision name="1.0" status="release" pubdate="20140306090737" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/jmurty/java-xmlbuilder" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="93">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="3322" time="219" location="C:\Users\adity\.ivy2\cache\com.jamesmurty.utils\java-xmlbuilder\ivy-1.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\com.jamesmurty.utils\java-xmlbuilder\ivy-1.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/jamesmurty/utils/java-xmlbuilder/1.0/java-xmlbuilder-1.0.pom"/>
+				<metadata-artifact status="no" details="" size="3494" time="0" location="C:\Users\adity\.ivy2\cache\com.jamesmurty.utils\java-xmlbuilder\ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/jamesmurty/utils/java-xmlbuilder/1.0/java-xmlbuilder-1.0.pom"/>
 				<caller organisation="net.java.dev.jets3t" name="jets3t" conf="compile, runtime" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="0.9.3"/>
 				<artifacts>
-					<artifact name="java-xmlbuilder" type="jar" ext="jar" status="successful" details="" size="10023" time="219" location="C:\Users\adity\.ivy2\cache\com.jamesmurty.utils\java-xmlbuilder\jars\java-xmlbuilder-1.0.jar">
+					<artifact name="java-xmlbuilder" type="jar" ext="jar" status="no" details="" size="10023" time="0" location="C:\Users\adity\.ivy2\cache\com.jamesmurty.utils\java-xmlbuilder\jars\java-xmlbuilder-1.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/jamesmurty/utils/java-xmlbuilder/1.0/java-xmlbuilder-1.0.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="net.iharder" name="base64">
-			<revision name="2.3.8" status="release" pubdate="20100326214244" resolver="public" artresolver="public" homepage="http://iharder.net/base64/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="94">
+			<revision name="2.3.8" status="release" pubdate="20100326214244" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://iharder.net/base64/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="94">
 				<license name="Public domain"/>
-				<metadata-artifact status="successful" details="" size="5877" time="219" location="C:\Users\adity\.ivy2\cache\net.iharder\base64\ivy-2.3.8.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\net.iharder\base64\ivy-2.3.8.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/iharder/base64/2.3.8/base64-2.3.8.pom"/>
+				<metadata-artifact status="no" details="" size="3096" time="0" location="C:\Users\adity\.ivy2\cache\net.iharder\base64\ivy-2.3.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/iharder/base64/2.3.8/base64-2.3.8.pom"/>
 				<caller organisation="com.jamesmurty.utils" name="java-xmlbuilder" conf="compile, runtime" rev="2.3.8" rev-constraint-default="2.3.8" rev-constraint-dynamic="2.3.8" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="base64" type="jar" ext="jar" status="successful" details="" size="17008" time="266" location="C:\Users\adity\.ivy2\cache\net.iharder\base64\jars\base64-2.3.8.jar">
+					<artifact name="base64" type="jar" ext="jar" status="no" details="" size="17008" time="0" location="C:\Users\adity\.ivy2\cache\net.iharder\base64\jars\base64-2.3.8.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/iharder/base64/2.3.8/base64-2.3.8.jar"/>
 					</artifact>
 				</artifacts>
@@ -677,39 +689,39 @@
 			</revision>
 		</module>
 		<module organisation="javax.mail" name="mail">
-			<revision name="1.4.7" status="release" pubdate="20130308203818" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="91">
+			<revision name="1.4.7" status="release" pubdate="20130308203818" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="91">
 				<license name="CDDL" url="http://www.sun.com/cddl"/>
 				<license name="GPLv2+CE" url="https://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
-				<metadata-artifact status="successful" details="" size="5316" time="219" location="C:\Users\adity\.ivy2\cache\javax.mail\mail\ivy-1.4.7.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\javax.mail\mail\ivy-1.4.7.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/mail/mail/1.4.7/mail-1.4.7.pom"/>
+				<metadata-artifact status="no" details="" size="6855" time="0" location="C:\Users\adity\.ivy2\cache\javax.mail\mail\ivy-1.4.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/mail/mail/1.4.7/mail-1.4.7.pom"/>
 				<caller organisation="net.java.dev.jets3t" name="jets3t" conf="compile, runtime" rev="1.4.7" rev-constraint-default="1.4.7" rev-constraint-dynamic="1.4.7" callerrev="0.9.3"/>
 				<artifacts>
-					<artifact name="mail" type="jar" ext="jar" status="successful" details="" size="521157" time="328" location="C:\Users\adity\.ivy2\cache\javax.mail\mail\jars\mail-1.4.7.jar">
+					<artifact name="mail" type="jar" ext="jar" status="no" details="" size="521157" time="0" location="C:\Users\adity\.ivy2\cache\javax.mail\mail\jars\mail-1.4.7.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/javax/mail/mail/1.4.7/mail-1.4.7.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="mx4j" name="mx4j">
-			<revision name="3.0.2" status="release" pubdate="20070214173254" resolver="public" artresolver="public" homepage="http://mx4j.sourceforge.net" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="90">
+			<revision name="3.0.2" status="release" pubdate="20070214173254" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://mx4j.sourceforge.net" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="90">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="585" time="185" location="C:\Users\adity\.ivy2\cache\mx4j\mx4j\ivy-3.0.2.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\mx4j\mx4j\ivy-3.0.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/mx4j/mx4j/3.0.2/mx4j-3.0.2.pom"/>
+				<metadata-artifact status="no" details="" size="2520" time="0" location="C:\Users\adity\.ivy2\cache\mx4j\mx4j\ivy-3.0.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/mx4j/mx4j/3.0.2/mx4j-3.0.2.pom"/>
 				<caller organisation="net.java.dev.jets3t" name="jets3t" conf="compile, runtime" rev="3.0.2" rev-constraint-default="3.0.2" rev-constraint-dynamic="3.0.2" callerrev="0.9.3"/>
 				<artifacts>
-					<artifact name="mx4j" type="jar" ext="jar" status="successful" details="" size="409467" time="283" location="C:\Users\adity\.ivy2\cache\mx4j\mx4j\jars\mx4j-3.0.2.jar">
+					<artifact name="mx4j" type="jar" ext="jar" status="no" details="" size="409467" time="0" location="C:\Users\adity\.ivy2\cache\mx4j\mx4j\jars\mx4j-3.0.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/mx4j/mx4j/3.0.2/mx4j-3.0.2.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="javax.activation" name="activation">
-			<revision name="1.1.1" status="release" pubdate="20091023142603" resolver="public" artresolver="public" homepage="http://java.sun.com/javase/technologies/desktop/javabeans/jaf/index.jsp" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="89">
+			<revision name="1.1.1" status="release" pubdate="20091023142603" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://java.sun.com/javase/technologies/desktop/javabeans/jaf/index.jsp" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="89">
 				<license name="COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0" url="https://glassfish.dev.java.net/public/CDDLv1.0.html"/>
-				<metadata-artifact status="successful" details="" size="644" time="206" location="C:\Users\adity\.ivy2\cache\javax.activation\activation\ivy-1.1.1.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\javax.activation\activation\ivy-1.1.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/activation/activation/1.1.1/activation-1.1.1.pom"/>
+				<metadata-artifact status="no" details="" size="2674" time="0" location="C:\Users\adity\.ivy2\cache\javax.activation\activation\ivy-1.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/activation/activation/1.1.1/activation-1.1.1.pom"/>
 				<caller organisation="net.java.dev.jets3t" name="jets3t" conf="compile, runtime" rev="1.1.1" rev-constraint-default="1.1.1" rev-constraint-dynamic="1.1.1" callerrev="0.9.3"/>
 				<caller organisation="javax.xml.bind" name="jaxb-api" conf="compile, runtime" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="2.2.2"/>
 				<caller organisation="javax.mail" name="mail" conf="compile, runtime" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.4.7"/>
 				<artifacts>
-					<artifact name="activation" type="jar" ext="jar" status="successful" details="" size="69409" time="215" location="C:\Users\adity\.ivy2\cache\javax.activation\activation\jars\activation-1.1.1.jar">
+					<artifact name="activation" type="jar" ext="jar" status="no" details="" size="69409" time="0" location="C:\Users\adity\.ivy2\cache\javax.activation\activation\jars\activation-1.1.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/javax/activation/activation/1.1.1/activation-1.1.1.jar"/>
 					</artifact>
 				</artifacts>
@@ -777,13 +789,13 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.httpcomponents" name="httpclient">
-			<revision name="4.3.6" status="release" pubdate="20141102084602" resolver="public" artresolver="public" homepage="http://hc.apache.org/httpcomponents-client" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="87">
+			<revision name="4.3.6" status="release" pubdate="20141102084602" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-client" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="87">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="5209" time="204" location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpclient\ivy-4.3.6.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpclient\ivy-4.3.6.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.pom"/>
+				<metadata-artifact status="no" details="" size="9809" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpclient\ivy-4.3.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.pom"/>
 				<caller organisation="net.java.dev.jets3t" name="jets3t" conf="compile, runtime" rev="4.3.6" rev-constraint-default="4.3.6" rev-constraint-dynamic="4.3.6" callerrev="0.9.3"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-auth" conf="compile, runtime" rev="4.2.5" rev-constraint-default="4.2.5" rev-constraint-dynamic="4.2.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="httpclient" type="jar" ext="jar" status="successful" details="" size="592008" time="315" location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpclient\jars\httpclient-4.3.6.jar">
+					<artifact name="httpclient" type="jar" ext="jar" status="no" details="" size="592008" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpclient\jars\httpclient-4.3.6.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.jar"/>
 					</artifact>
 				</artifacts>
@@ -797,14 +809,14 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.httpcomponents" name="httpcore">
-			<revision name="4.3.3" status="release" pubdate="20141018075118" resolver="public" artresolver="public" homepage="http://hc.apache.org/httpcomponents-core-ga" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="86">
+			<revision name="4.3.3" status="release" pubdate="20141018075118" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hc.apache.org/httpcomponents-core-ga" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="86">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="4597" time="203" location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpcore\ivy-4.3.3.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpcore\ivy-4.3.3.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.pom"/>
+				<metadata-artifact status="no" details="" size="7682" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpcore\ivy-4.3.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.pom"/>
 				<caller organisation="net.java.dev.jets3t" name="jets3t" conf="compile, runtime" rev="4.3.3" rev-constraint-default="4.3.3" rev-constraint-dynamic="4.3.3" callerrev="0.9.3"/>
 				<caller organisation="org.apache.httpcomponents" name="httpclient" conf="compile" rev="4.2.4" rev-constraint-default="4.2.4" rev-constraint-dynamic="4.2.4" callerrev="4.2.5"/>
 				<caller organisation="org.apache.httpcomponents" name="httpclient" conf="compile, runtime" rev="4.3.3" rev-constraint-default="4.3.3" rev-constraint-dynamic="4.3.3" callerrev="4.3.6"/>
 				<artifacts>
-					<artifact name="httpcore" type="jar" ext="jar" status="successful" details="" size="282793" time="255" location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.3.3.jar">
+					<artifact name="httpcore" type="jar" ext="jar" status="no" details="" size="282793" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.3.3.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.jar"/>
 					</artifact>
 				</artifacts>
@@ -821,10 +833,10 @@
 		<module organisation="org.apache.spark" name="spark-unsafe_2.10">
 			<revision name="2.2.0" status="release" pubdate="20170630203030" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="84">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="4759" time="212" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-unsafe_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-unsafe_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.10/2.2.0/spark-unsafe_2.10-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="4759" time="201" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-unsafe_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-unsafe_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.10/2.2.0/spark-unsafe_2.10-2.2.0.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<artifacts>
-					<artifact name="spark-unsafe_2.10" type="jar" ext="jar" status="successful" details="" size="46533" time="375" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-unsafe_2.10\jars\spark-unsafe_2.10-2.2.0.jar">
+					<artifact name="spark-unsafe_2.10" type="jar" ext="jar" status="no" details="" size="46533" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-unsafe_2.10\jars\spark-unsafe_2.10-2.2.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/spark/spark-unsafe_2.10/2.2.0/spark-unsafe_2.10-2.2.0.jar"/>
 					</artifact>
 				</artifacts>
@@ -833,10 +845,10 @@
 		<module organisation="org.apache.spark" name="spark-network-shuffle_2.10">
 			<revision name="2.2.0" status="release" pubdate="20170630203043" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="82">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="4079" time="194" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-shuffle_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-shuffle_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.10/2.2.0/spark-network-shuffle_2.10-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="4079" time="204" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-shuffle_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-shuffle_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.10/2.2.0/spark-network-shuffle_2.10-2.2.0.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<artifacts>
-					<artifact name="spark-network-shuffle_2.10" type="jar" ext="jar" status="successful" details="" size="62460" time="219" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-shuffle_2.10\jars\spark-network-shuffle_2.10-2.2.0.jar">
+					<artifact name="spark-network-shuffle_2.10" type="jar" ext="jar" status="no" details="" size="62460" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-shuffle_2.10\jars\spark-network-shuffle_2.10-2.2.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-shuffle_2.10/2.2.0/spark-network-shuffle_2.10-2.2.0.jar"/>
 					</artifact>
 				</artifacts>
@@ -861,11 +873,11 @@
 		<module organisation="org.apache.spark" name="spark-network-common_2.10">
 			<revision name="2.2.0" status="release" pubdate="20170630203601" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="75">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="5339" time="204" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-common_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-common_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.10/2.2.0/spark-network-common_2.10-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="5339" time="253" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-common_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-common_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.10/2.2.0/spark-network-common_2.10-2.2.0.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<caller organisation="org.apache.spark" name="spark-network-shuffle_2.10" conf="compile, runtime" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<artifacts>
-					<artifact name="spark-network-common_2.10" type="jar" ext="jar" status="successful" details="" size="2375116" time="891" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-common_2.10\jars\spark-network-common_2.10-2.2.0.jar">
+					<artifact name="spark-network-common_2.10" type="jar" ext="jar" status="no" details="" size="2375116" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-network-common_2.10\jars\spark-network-common_2.10-2.2.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/spark/spark-network-common_2.10/2.2.0/spark-network-common_2.10-2.2.0.jar"/>
 					</artifact>
 				</artifacts>
@@ -961,13 +973,13 @@
 			</revision>
 		</module>
 		<module organisation="io.netty" name="netty-all">
-			<revision name="4.0.43.Final" status="release" pubdate="20170112080234" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="76">
+			<revision name="4.0.43.Final" status="release" pubdate="20170112080234" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="76">
 				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="18509" time="203" location="C:\Users\adity\.ivy2\cache\io.netty\netty-all\ivy-4.0.43.Final.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\io.netty\netty-all\ivy-4.0.43.Final.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-all/4.0.43.Final/netty-all-4.0.43.Final.pom"/>
+				<metadata-artifact status="no" details="" size="17960" time="0" location="C:\Users\adity\.ivy2\cache\io.netty\netty-all\ivy-4.0.43.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-all/4.0.43.Final/netty-all-4.0.43.Final.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="4.0.43.Final" rev-constraint-default="4.0.43.Final" rev-constraint-dynamic="4.0.43.Final" callerrev="2.2.0"/>
 				<caller organisation="org.apache.spark" name="spark-network-common_2.10" conf="compile, runtime" rev="4.0.43.Final" rev-constraint-default="4.0.43.Final" rev-constraint-dynamic="4.0.43.Final" callerrev="2.2.0"/>
 				<artifacts>
-					<artifact name="netty-all" type="jar" ext="jar" status="successful" details="" size="2326492" time="797" location="C:\Users\adity\.ivy2\cache\io.netty\netty-all\jars\netty-all-4.0.43.Final.jar">
+					<artifact name="netty-all" type="jar" ext="jar" status="no" details="" size="2326492" time="0" location="C:\Users\adity\.ivy2\cache\io.netty\netty-all\jars\netty-all-4.0.43.Final.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-all/4.0.43.Final/netty-all-4.0.43.Final.jar"/>
 					</artifact>
 				</artifacts>
@@ -976,10 +988,10 @@
 		<module organisation="org.apache.spark" name="spark-launcher_2.10">
 			<revision name="2.2.0" status="release" pubdate="20170630202932" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="72">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="6282" time="203" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-launcher_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-launcher_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.10/2.2.0/spark-launcher_2.10-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="6282" time="218" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-launcher_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-launcher_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.10/2.2.0/spark-launcher_2.10-2.2.0.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<artifacts>
-					<artifact name="spark-launcher_2.10" type="jar" ext="jar" status="successful" details="" size="66820" time="218" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-launcher_2.10\jars\spark-launcher_2.10-2.2.0.jar">
+					<artifact name="spark-launcher_2.10" type="jar" ext="jar" status="no" details="" size="66820" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-launcher_2.10\jars\spark-launcher_2.10-2.2.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/spark/spark-launcher_2.10/2.2.0/spark-launcher_2.10-2.2.0.jar"/>
 					</artifact>
 				</artifacts>
@@ -988,14 +1000,14 @@
 		<module organisation="org.apache.spark" name="spark-tags_2.10">
 			<revision name="2.2.0" status="release" pubdate="20170630203357" resolver="public" artresolver="public" homepage="http://spark.apache.org/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="73">
 				<license name="Apache 2.0 License" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2180" time="191" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-tags_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-tags_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.10/2.2.0/spark-tags_2.10-2.2.0.pom"/>
+				<metadata-artifact status="successful" details="" size="2180" time="229" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-tags_2.10\ivy-2.2.0.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-tags_2.10\ivy-2.2.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.10/2.2.0/spark-tags_2.10-2.2.0.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<caller organisation="org.apache.spark" name="spark-network-common_2.10" conf="compile, runtime" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<caller organisation="org.apache.spark" name="spark-launcher_2.10" conf="compile, runtime" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<caller organisation="org.apache.spark" name="spark-network-shuffle_2.10" conf="compile, runtime" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<caller organisation="org.apache.spark" name="spark-unsafe_2.10" conf="compile, runtime" rev="2.2.0" rev-constraint-default="2.2.0" rev-constraint-dynamic="2.2.0" callerrev="2.2.0"/>
 				<artifacts>
-					<artifact name="spark-tags_2.10" type="jar" ext="jar" status="successful" details="" size="15420" time="328" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-tags_2.10\jars\spark-tags_2.10-2.2.0.jar">
+					<artifact name="spark-tags_2.10" type="jar" ext="jar" status="no" details="" size="15420" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.spark\spark-tags_2.10\jars\spark-tags_2.10-2.2.0.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/spark/spark-tags_2.10/2.2.0/spark-tags_2.10-2.2.0.jar"/>
 					</artifact>
 				</artifacts>
@@ -1162,58 +1174,58 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-client">
-			<revision name="2.6.5" status="release" pubdate="20161002192938" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
+			<revision name="2.6.5" status="release" pubdate="20161002192938" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="11060" time="203" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-client\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-client\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/2.6.5/hadoop-client-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="39384" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-client\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/2.6.5/hadoop-client-2.6.5.pom"/>
 				<caller organisation="org.apache.spark" name="spark-core_2.10" conf="default, compile, runtime, master" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.2.0"/>
 				<artifacts>
-					<artifact name="hadoop-client" type="jar" ext="jar" status="successful" details="" size="25986" time="235" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-client\jars\hadoop-client-2.6.5.jar">
+					<artifact name="hadoop-client" type="jar" ext="jar" status="no" details="" size="25986" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-client\jars\hadoop-client-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client/2.6.5/hadoop-client-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-mapreduce-client-jobclient">
-			<revision name="2.6.5" status="release" pubdate="20161002192531" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="71">
+			<revision name="2.6.5" status="release" pubdate="20161002192531" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="71">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="5656" time="221" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-jobclient\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-jobclient\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.6.5/hadoop-mapreduce-client-jobclient-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="36920" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-jobclient\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.6.5/hadoop-mapreduce-client-jobclient-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-client" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-mapreduce-client-jobclient" type="jar" ext="jar" status="successful" details="" size="61307" time="203" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-jobclient\jars\hadoop-mapreduce-client-jobclient-2.6.5.jar">
+					<artifact name="hadoop-mapreduce-client-jobclient" type="jar" ext="jar" status="no" details="" size="61307" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-jobclient\jars\hadoop-mapreduce-client-jobclient-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-jobclient/2.6.5/hadoop-mapreduce-client-jobclient-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-mapreduce-client-app">
-			<revision name="2.6.5" status="release" pubdate="20161002192452" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="53">
+			<revision name="2.6.5" status="release" pubdate="20161002192452" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="53">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="4697" time="214" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-app\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-app\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-app/2.6.5/hadoop-mapreduce-client-app-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="36417" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-app\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-app/2.6.5/hadoop-mapreduce-client-app-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-client" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-mapreduce-client-app" type="jar" ext="jar" status="successful" details="" size="528586" time="313" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-app\jars\hadoop-mapreduce-client-app-2.6.5.jar">
+					<artifact name="hadoop-mapreduce-client-app" type="jar" ext="jar" status="no" details="" size="528586" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-app\jars\hadoop-mapreduce-client-app-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-app/2.6.5/hadoop-mapreduce-client-app-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-mapreduce-client-shuffle">
-			<revision name="2.6.5" status="release" pubdate="20161002192435" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="70">
+			<revision name="2.6.5" status="release" pubdate="20161002192435" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="70">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3071" time="203" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-shuffle\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-shuffle\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.6.5/hadoop-mapreduce-client-shuffle-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="35157" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-shuffle\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.6.5/hadoop-mapreduce-client-shuffle-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-app" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-jobclient" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-mapreduce-client-shuffle" type="jar" ext="jar" status="successful" details="" size="67772" time="219" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-shuffle\jars\hadoop-mapreduce-client-shuffle-2.6.5.jar">
+					<artifact name="hadoop-mapreduce-client-shuffle" type="jar" ext="jar" status="no" details="" size="67772" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-shuffle\jars\hadoop-mapreduce-client-shuffle-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-shuffle/2.6.5/hadoop-mapreduce-client-shuffle-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-server-nodemanager">
-			<revision name="2.6.5" status="release" pubdate="20161002192054" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*)" position="137">
+			<revision name="2.6.5" status="release" pubdate="20161002192054" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*)" position="137">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="12056" time="204" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-server-nodemanager\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-server-nodemanager\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-server-nodemanager/2.6.5/hadoop-yarn-server-nodemanager-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="38609" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-server-nodemanager\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-server-nodemanager/2.6.5/hadoop-yarn-server-nodemanager-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-shuffle" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
 				</artifacts>
@@ -1231,53 +1243,53 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-mapreduce-client-common">
-			<revision name="2.6.5" status="release" pubdate="20161002192418" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="54">
+			<revision name="2.6.5" status="release" pubdate="20161002192418" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="54">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3273" time="209" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-common\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-common\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-common/2.6.5/hadoop-mapreduce-client-common-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="35139" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-common\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-common/2.6.5/hadoop-mapreduce-client-common-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-app" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-shuffle" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-jobclient" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-mapreduce-client-common" type="jar" ext="jar" status="successful" details="" size="688209" time="328" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-common\jars\hadoop-mapreduce-client-common-2.6.5.jar">
+					<artifact name="hadoop-mapreduce-client-common" type="jar" ext="jar" status="no" details="" size="688209" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-common\jars\hadoop-mapreduce-client-common-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-common/2.6.5/hadoop-mapreduce-client-common-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-mapreduce-client-core">
-			<revision name="2.6.5" status="release" pubdate="20161002192350" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="66">
+			<revision name="2.6.5" status="release" pubdate="20161002192350" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="66">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3492" time="187" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-core\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-core\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/2.6.5/hadoop-mapreduce-client-core-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="34793" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-core\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/2.6.5/hadoop-mapreduce-client-core-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-client" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-common" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-mapreduce-client-core" type="jar" ext="jar" status="successful" details="" size="1537966" time="500" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-core\jars\hadoop-mapreduce-client-core-2.6.5.jar">
+					<artifact name="hadoop-mapreduce-client-core" type="jar" ext="jar" status="no" details="" size="1537966" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-mapreduce-client-core\jars\hadoop-mapreduce-client-core-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-mapreduce-client-core/2.6.5/hadoop-mapreduce-client-core-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-client">
-			<revision name="2.6.5" status="release" pubdate="20161002192230" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="65">
+			<revision name="2.6.5" status="release" pubdate="20161002192230" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="65">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="6324" time="205" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-client\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-client\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-client/2.6.5/hadoop-yarn-client-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="35026" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-client\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-client/2.6.5/hadoop-yarn-client-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-common" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-yarn-client" type="jar" ext="jar" status="successful" details="" size="151865" time="225" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-client\jars\hadoop-yarn-client-2.6.5.jar">
+					<artifact name="hadoop-yarn-client" type="jar" ext="jar" status="no" details="" size="151865" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-client\jars\hadoop-yarn-client-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-client/2.6.5/hadoop-yarn-client-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-server-common">
-			<revision name="2.6.5" status="release" pubdate="20161002192026" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="68">
+			<revision name="2.6.5" status="release" pubdate="20161002192026" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="68">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="5686" time="219" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-server-common\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-server-common\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-server-common/2.6.5/hadoop-yarn-server-common-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="36153" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-server-common\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-server-common/2.6.5/hadoop-yarn-server-common-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-shuffle" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-common" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-server-nodemanager" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-yarn-server-common" type="jar" ext="jar" status="successful" details="" size="319959" time="271" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-server-common\jars\hadoop-yarn-server-common-2.6.5.jar">
+					<artifact name="hadoop-yarn-server-common" type="jar" ext="jar" status="no" details="" size="319959" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-server-common\jars\hadoop-yarn-server-common-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-server-common/2.6.5/hadoop-yarn-server-common-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
@@ -1299,16 +1311,16 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-common">
-			<revision name="2.6.5" status="release" pubdate="20161002191957" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="55">
+			<revision name="2.6.5" status="release" pubdate="20161002191957" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="55">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="10497" time="188" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-common\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-common\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-common/2.6.5/hadoop-yarn-common-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="36353" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-common\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-common/2.6.5/hadoop-yarn-common-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-server-common" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-core" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-mapreduce-client-common" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-server-nodemanager" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-client" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-yarn-common" type="jar" ext="jar" status="successful" details="" size="1629101" time="516" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-common\jars\hadoop-yarn-common-2.6.5.jar">
+					<artifact name="hadoop-yarn-common" type="jar" ext="jar" status="no" details="" size="1629101" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-common\jars\hadoop-yarn-common-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-common/2.6.5/hadoop-yarn-common-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
@@ -1405,64 +1417,64 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-yarn-api">
-			<revision name="2.6.5" status="release" pubdate="20161002191918" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="56">
+			<revision name="2.6.5" status="release" pubdate="20161002191918" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="56">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="4613" time="205" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-api\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-api\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-api/2.6.5/hadoop-yarn-api-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="32130" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-api\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-api/2.6.5/hadoop-yarn-api-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-server-common" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-client" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-server-nodemanager" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-common" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-client" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-yarn-api" type="jar" ext="jar" status="successful" details="" size="1896185" time="594" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-api\jars\hadoop-yarn-api-2.6.5.jar">
+					<artifact name="hadoop-yarn-api" type="jar" ext="jar" status="no" details="" size="1896185" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-yarn-api\jars\hadoop-yarn-api-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-yarn-api/2.6.5/hadoop-yarn-api-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-hdfs">
-			<revision name="2.6.5" status="release" pubdate="20161002191335" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="49">
+			<revision name="2.6.5" status="release" pubdate="20161002191335" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="49">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="29372" time="195" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-hdfs\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-hdfs\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/2.6.5/hadoop-hdfs-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="38112" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-hdfs\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/2.6.5/hadoop-hdfs-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-client" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-hdfs" type="jar" ext="jar" status="successful" details="" size="7944061" time="1887" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-hdfs\jars\hadoop-hdfs-2.6.5.jar">
+					<artifact name="hadoop-hdfs" type="jar" ext="jar" status="no" details="" size="7944061" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-hdfs\jars\hadoop-hdfs-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-hdfs/2.6.5/hadoop-hdfs-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="xerces" name="xercesImpl">
-			<revision name="2.9.1" status="release" pubdate="20081001181919" resolver="public" artresolver="public" homepage="http://xerces.apache.org/xerces2-j" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="51">
+			<revision name="2.9.1" status="release" pubdate="20081001181919" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xerces.apache.org/xerces2-j" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="51">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1363" time="222" location="C:\Users\adity\.ivy2\cache\xerces\xercesImpl\ivy-2.9.1.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\xerces\xercesImpl\ivy-2.9.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.pom"/>
+				<metadata-artifact status="no" details="" size="3233" time="0" location="C:\Users\adity\.ivy2\cache\xerces\xercesImpl\ivy-2.9.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-hdfs" conf="compile, runtime" rev="2.9.1" rev-constraint-default="2.9.1" rev-constraint-dynamic="2.9.1" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="xercesImpl" type="jar" ext="jar" status="successful" details="" size="1229125" time="458" location="C:\Users\adity\.ivy2\cache\xerces\xercesImpl\jars\xercesImpl-2.9.1.jar">
+					<artifact name="xercesImpl" type="jar" ext="jar" status="no" details="" size="1229125" time="0" location="C:\Users\adity\.ivy2\cache\xerces\xercesImpl\jars\xercesImpl-2.9.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="xml-apis" name="xml-apis">
-			<revision name="1.3.04" status="release" pubdate="20061222083752" resolver="public" artresolver="public" homepage="http://xml.apache.org/commons/components/external/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="52">
+			<revision name="1.3.04" status="release" pubdate="20061222083752" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://xml.apache.org/commons/components/external/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="52">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1822" time="203" location="C:\Users\adity\.ivy2\cache\xml-apis\xml-apis\ivy-1.3.04.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\xml-apis\xml-apis\ivy-1.3.04.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom"/>
+				<metadata-artifact status="no" details="" size="3090" time="0" location="C:\Users\adity\.ivy2\cache\xml-apis\xml-apis\ivy-1.3.04.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.pom"/>
 				<caller organisation="xerces" name="xercesImpl" conf="compile, runtime" rev="1.3.04" rev-constraint-default="1.3.04" rev-constraint-dynamic="1.3.04" callerrev="2.9.1"/>
 				<artifacts>
-					<artifact name="xml-apis" type="jar" ext="jar" status="successful" details="" size="194354" time="219" location="C:\Users\adity\.ivy2\cache\xml-apis\xml-apis\jars\xml-apis-1.3.04.jar">
+					<artifact name="xml-apis" type="jar" ext="jar" status="no" details="" size="194354" time="0" location="C:\Users\adity\.ivy2\cache\xml-apis\xml-apis\jars\xml-apis-1.3.04.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/xml-apis/xml-apis/1.3.04/xml-apis-1.3.04.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-common">
-			<revision name="2.6.5" status="release" pubdate="20161002190854" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="18">
+			<revision name="2.6.5" status="release" pubdate="20161002190854" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="18">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="30601" time="204" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-common\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-common\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-common/2.6.5/hadoop-common-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="40466" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-common\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-common/2.6.5/hadoop-common-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-client" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-common" type="jar" ext="jar" status="successful" details="" size="3354982" time="1000" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-common\jars\hadoop-common-2.6.5.jar">
+					<artifact name="hadoop-common" type="jar" ext="jar" status="no" details="" size="3354982" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-common\jars\hadoop-common-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-common/2.6.5/hadoop-common-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
@@ -1495,12 +1507,12 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-auth">
-			<revision name="2.6.5" status="release" pubdate="20161002190725" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="37">
+			<revision name="2.6.5" status="release" pubdate="20161002190725" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="37">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="7658" time="202" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-auth\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-auth\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-auth/2.6.5/hadoop-auth-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="32804" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-auth\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-auth/2.6.5/hadoop-auth-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-auth" type="jar" ext="jar" status="successful" details="" size="90610" time="221" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-auth\jars\hadoop-auth-2.6.5.jar">
+					<artifact name="hadoop-auth" type="jar" ext="jar" status="no" details="" size="90610" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-auth\jars\hadoop-auth-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-auth/2.6.5/hadoop-auth-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
@@ -1745,12 +1757,12 @@
 			</revision>
 		</module>
 		<module organisation="commons-collections" name="commons-collections">
-			<revision name="3.2.2" status="release" pubdate="20151112181126" resolver="public" artresolver="public" homepage="http://commons.apache.org/collections/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="28">
-				<metadata-artifact status="successful" details="" size="12403" time="191" location="C:\Users\adity\.ivy2\cache\commons-collections\commons-collections\ivy-3.2.2.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\commons-collections\commons-collections\ivy-3.2.2.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.pom"/>
+			<revision name="3.2.2" status="release" pubdate="20151112181126" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/collections/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="28">
+				<metadata-artifact status="no" details="" size="11115" time="0" location="C:\Users\adity\.ivy2\cache\commons-collections\commons-collections\ivy-3.2.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="3.2.2" rev-constraint-default="3.2.2" rev-constraint-dynamic="3.2.2" callerrev="2.6.5"/>
 				<caller organisation="commons-configuration" name="commons-configuration" conf="compile, runtime" rev="3.2.1" rev-constraint-default="3.2.1" rev-constraint-dynamic="3.2.1" callerrev="1.6"/>
 				<artifacts>
-					<artifact name="commons-collections" type="jar" ext="jar" status="successful" details="" size="588337" time="313" location="C:\Users\adity\.ivy2\cache\commons-collections\commons-collections\jars\commons-collections-3.2.2.jar">
+					<artifact name="commons-collections" type="jar" ext="jar" status="no" details="" size="588337" time="0" location="C:\Users\adity\.ivy2\cache\commons-collections\commons-collections\jars\commons-collections-3.2.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar"/>
 					</artifact>
 				</artifacts>
@@ -1830,7 +1842,7 @@
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-api" conf="compile, runtime" rev="11.0.2" rev-constraint-default="11.0.2" rev-constraint-dynamic="11.0.2" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-yarn-client" conf="compile, runtime" rev="11.0.2" rev-constraint-default="11.0.2" rev-constraint-dynamic="11.0.2" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="guava" type="jar" ext="jar" status="successful" details="" size="1648200" time="531" location="C:\Users\adity\.ivy2\cache\com.google.guava\guava\jars\guava-11.0.2.jar">
+					<artifact name="guava" type="jar" ext="jar" status="no" details="" size="1648200" time="0" location="C:\Users\adity\.ivy2\cache\com.google.guava\guava\jars\guava-11.0.2.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/guava/guava/11.0.2/guava-11.0.2.jar"/>
 					</artifact>
 				</artifacts>
@@ -1867,13 +1879,13 @@
 			</revision>
 		</module>
 		<module organisation="org.apache.hadoop" name="hadoop-annotations">
-			<revision name="2.6.5" status="release" pubdate="20161002190538" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
+			<revision name="2.6.5" status="release" pubdate="20161002190538" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2388" time="199" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-annotations\ivy-2.6.5.xml" searched="true" original-local-location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-annotations\ivy-2.6.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-annotations/2.6.5/hadoop-annotations-2.6.5.pom"/>
+				<metadata-artifact status="no" details="" size="28810" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-annotations\ivy-2.6.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-annotations/2.6.5/hadoop-annotations-2.6.5.pom"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-common" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<caller organisation="org.apache.hadoop" name="hadoop-client" conf="compile, runtime" rev="2.6.5" rev-constraint-default="2.6.5" rev-constraint-dynamic="2.6.5" callerrev="2.6.5"/>
 				<artifacts>
-					<artifact name="hadoop-annotations" type="jar" ext="jar" status="successful" details="" size="40471" time="281" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-annotations\jars\hadoop-annotations-2.6.5.jar">
+					<artifact name="hadoop-annotations" type="jar" ext="jar" status="no" details="" size="40471" time="0" location="C:\Users\adity\.ivy2\cache\org.apache.hadoop\hadoop-annotations\jars\hadoop-annotations-2.6.5.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-annotations/2.6.5/hadoop-annotations-2.6.5.jar"/>
 					</artifact>
 				</artifacts>
