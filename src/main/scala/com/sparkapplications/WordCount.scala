@@ -1,9 +1,10 @@
+package com.sparkapplications
+
 /**
   * Created by adity on 10/2/2017.
   */
 
 import org.apache.spark._
-import org.apache.spark.SparkContext._
 
 object WordCount {
   def main(args: Array[String]) {
@@ -11,7 +12,10 @@ object WordCount {
       case x: Int if x > 0 => args(0)
       case _ => "local"
     }
-    val sc = new SparkContext(master, "WordCount", System.getenv("SPARK_HOME"))
+    val conf = new SparkConf()
+    conf.setMaster("local")
+    conf.setAppName("My WordCont")
+    val sc = new SparkContext(conf)
     val input = args.length match {
       case x: Int if x > 1 => sc.textFile(args(1))
       case _ => sc.parallelize(List("pandas", "i like pandas"))

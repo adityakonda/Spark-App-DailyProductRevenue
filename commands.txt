@@ -1,0 +1,4 @@
+
+1   Launching WordCount Spark Application
+spark-submit --class com.sparkapplications.WordCount C:\Users\adity\IdeaProjects\Git_Projects\Spark_Applications\target\scala-2.11\spark_applications_2.11-1.0.jar
+
