@@ -1,0 +1,9 @@
+1)  Difference between synchronized method & synchronized block
+
+        The difference is in which lock is being acquired:
+
+        synchronized method acquires a method on the whole object. This means no other thread can use any synchronized method in the whole object while the method is being run by one thread.
+        synchronized blocks acquires a lock in the object between parentheses after the synchronized keyword. Meaning no other thread can acquire a lock on the locked object until the synchronized block exits.
+        So if you want to lock the whole object, use a synchronized method. If you want to keep other parts of the object accessible to other threads, use synchronized block.
+
+        If you choose the locked object carefully, synchronized blocks will lead to less contention, because the whole object/class is not blocked.

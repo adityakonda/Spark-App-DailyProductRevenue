@@ -12,7 +12,6 @@ import java.util.Random;
     *   Two thread should adding values to list
     *   each thread takes 1000 milliseconds to add 1000 values
     *   two thread should 1000 milliseconds to add 1000 values
-    *
     * */
 public class MultipleLocksSynchronized {
 
