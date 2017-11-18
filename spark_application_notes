@@ -1,0 +1,7 @@
+1.  Launching Spark Shell
+
+spark-shell \
+--master yarn \
+--deploy-mode client \
+--num-executors 1\
+--executor-memory 500
