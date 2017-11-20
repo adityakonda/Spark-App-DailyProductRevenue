@@ -5,7 +5,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import scala.io.Source
 
 /**
-  * Created by adity on 11/15/2017.
+  * Created by aditya on 11/15/2017.
   */
 object ProductRevenue {
 
@@ -66,6 +66,18 @@ object ProductRevenue {
 
     ordersRejectedMap.take(10).foreach(println)
 
+    // ordersJoin(K,V) --> (orderID, (orderDate ,(productID, itemSubTotal))) --> (_1, (_2.1, (_2._2._1, _2._2._2)))
+
+    // aggregate to get daily revenue per product
+    // we have to get data in this structure from ordersJoin(K,V) --> ((orderDate, productID), itemSubTotal)
+
+    val orderJoinMap = ordersJoin.map( order => ((order._2._1, order._2._2._1),(order. _2._2._2)))
+    val dailyRevenuePerProductID = orderJoinMap.reduceByKey((total, revenue) => total + revenue)
+
+    // previewing the data
+    dailyRevenuePerProductID.take(100).foreach(println)
+    // previewing the data in sorted order
+    dailyRevenuePerProductID.sortByKey().take(100).foreach(println)
   }
 
 }
