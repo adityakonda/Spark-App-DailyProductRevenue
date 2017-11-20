@@ -1,58 +1,58 @@
-------------------------------------------
+-------------------------------------------------------
 	*** INITIALIZE THE JOB ***
-------------------------------------------
+-------------------------------------------------------
 
 
 1	Launching spark shell:
 
-	spark-shell --master yarn \
-	--deploy-mode client \
-	--conf spark.ui.port=12322 \
-	--num-executors 1 \
-	--executor-memory 500M
-	
+spark-shell --master yarn \
+--deploy-mode client \
+--conf spark.ui.port=12322 \
+--num-executors 1 \
+--executor-memory 800M
+
 2	view size of the dataset in hdfs:
 
 	hadoop fs -du -s -h /public/retail_db/orders
 	hadoop fs -du -s -h /public/retail_db/order_items
-	
+
 3	Changing Spark Configuration in run time in spark-shell
-	
+
 	sc.stop()
-	import org.apache.spark.SparkContext
-	import org.apache.spark.SparkConf
-	val conf = new SparkConf().setMaster("yarn-client").setAppName("MyAppName")
-	val sc = new SparkContext(conf)
-	
-------------------------------------------
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkConf
+val conf = new SparkConf().setMaster("yarn-client").setAppName("MyAppName")
+val sc = new SparkContext(conf)
+
+-------------------------------------------------------
 	*** RDD ***
-------------------------------------------
-	
+-------------------------------------------------------
+
 1	List --> RDD
 
 	val list = (1 to 100).toList
 	val listRdd = sc.parallelize(list)
 
 2	Local File System --> RDD
-	
+
 	import scala.io.Source
 
 	val productList = Source.fromFile("/root/aditya/data/retail_db/products/part-00000").getLines
 	val productRdd = sc.parallelize(productList.toList)
 	productRdd.take(10).foreach(println)
-	
+
 3	HDFS --> RDD
 
 	val orderRdd = sc.textFile("/user/root/retail_db/orders/")
 	orderRdd.first
 	orderRdd.take(10).foreach(println)
 
-	
-------------------------------------------
+
+-------------------------------------------------------
 	*** FILTERING THE DATA ***
-------------------------------------------
-	
-1	Filtering only COMPLETED & CLOSED Orders 
+-------------------------------------------------------
+
+1	Filtering only COMPLETED & CLOSED Orders
 
 	val orderFiltered = orderRdd.filter(x => {x.split(",")(3) == "CLOSED" || x.split(",")(3) == "COMPLETE"})
 	orderFiltered.collect.foreach(println)
@@ -60,9 +60,70 @@
 
 	no of orders				    = 68883 ($ orderRdd.count)
 	no of COMPLETED & CLOSED orders = 30455 ($ orderFiltered.count)
-	
-------------------------------------------
-	*** ACCUMULATORS ***
-------------------------------------------
 
+-------------------------------------------------------
+	*** ACCUMULATORS ***
+-------------------------------------------------------
+
+1	Counting number of order completed and order non completed
+
+	val orderRdd = sc.textFile("/user/root/retail_db/orders/")
+	orderRdd.first
+	val orderCompleted = sc.accumulator(0,"Orders Completed Count")
+	val orderNonCompleted = sc.accumulator(0,"Orders in-completed Count")
+
+	val ordersFiltered = orderRdd.filter( x => {
+			val isCompleted = x.split(",")(3) == "COMPLETED" || x.split(",")(3) == "CLOSED"
+			if(isCompleted)
+				orderCompleted += 1
+			else
+				orderNonCompleted +=1
+			isCompleted
+		})
+	orderFiltered.count
+
+
+-------------------------------------------------------
+	*** CONVERTING KEY & VALUE PAIRS ***
+-------------------------------------------------------
+
+
+	val orderRdd = sc.textFile("/user/root/retail_db/orders/")
+	val orderItemsRdd = sc.textFile("/user/root/retail_db/order_items")
+
+	orderRdd.first
+	orderItemsRdd.first
+
+	val orderCompleted = sc.accumulator(0,"Orders Completed Count")
+	val orderNonCompleted = sc.accumulator(0,"Orders in-completed Count")
+
+	val ordersFiltered = orderRdd.filter( x => {
+			val isCompleted = x.split(",")(3) == "COMPLETED" || x.split(",")(3) == "CLOSED"
+			if(isCompleted)
+				orderCompleted += 1
+			else
+				orderNonCompleted +=1
+			isCompleted
+		})
+	ordersFiltered.count
+
+	val orderMap = orderRdd.map(order => {
+		(order.split(",")(0).toInt,order.split(",")(1))
+	})
+
+	val orderItemMap = orderItemsRdd.map(orderItem =>
+		(orderItem.split(",")(1).toInt, (orderItem.split(",")(2).toInt, orderItem.split(",")(4).toFloat)) )
+
+-------------------------------------------------------
+	*** JOINING DATASET  (KEY & VALUE PAIRS) ***
+-------------------------------------------------------
+
+	val ordersJoin = orderMap.join(orderItemMap)
+	val ordersLeftJoin = orderMap.leftOuterJoin(orderItemMap)
+
+	// ordersLeftJoin will have orderID that does not exist in orderItems
+	// counting the orderID that does not exist in ordersItems
+
+	val t = (24688,("2013-12-25 00:00:00.0",None))
+	val ordersRejectedMap = ordersLeftJoin.filter( missingorder =>  missingorder._2._2 == None)
 
