@@ -3,7 +3,7 @@
 ## Retail Database Schema 
 
 <p align="center">
-  <img width="460" height="300" src="https://user-images.githubusercontent.com/7428555/33092798-37222b68-cec9-11e7-8595-d0b2f4a1333b.jpg">
+  <img width="700" height="450" src="https://user-images.githubusercontent.com/7428555/33092798-37222b68-cec9-11e7-8595-d0b2f4a1333b.jpg">
 </p>
 
 
