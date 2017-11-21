@@ -11,7 +11,7 @@ object ProductRevenue {
 
   def main(args: Array[String]): Unit = {
 
-    //setting up the spark configuration
+    /*    SETTING UP SPARK CONFIGURATION   */
     val conf = new SparkConf()
     conf.setAppName("Product Revenue")
     conf.setMaster("yarn-client")
@@ -19,20 +19,19 @@ object ProductRevenue {
     val sc = new SparkContext(conf)
     sc.setLogLevel("WARN")
 
-    // reading data from Local File System to RDD
+    /*    READING FROM LOCAL FILE SYSTEM   */
     val productList = Source.fromFile("/root/aditya/data/retail_db/products/part-00000").getLines
     val productRdd = sc.parallelize(productList.toList)
-    productRdd.take(10).foreach(println)
 
-    // reading from HDFS
+    /*    READING FROM HDFS   */
     val orderRdd = sc.textFile("/user/root/retail_db/orders/")
     val orderItemsRdd = sc.textFile("/user/root/retail_db/order_items")
 
-    // Counting orders completed (COMPLETED & CLOSED)  and order that are not completed
+    /*    ACCUMULATORS    */
     val orderCompleted = sc.accumulator(0,"Orders Completed Count")
     val orderNonCompleted = sc.accumulator(0,"Orders in-completed Count")
 
-    // filtering orders that are completed
+    /*    FILTERING DATA    */
     val ordersFiltered = orderRdd.filter( order => {
 
       val isCompleted = order.split(",")(3) == "COMPLETED" || order.split(",")(3) == "CLOSED"
@@ -45,18 +44,18 @@ object ProductRevenue {
       isCompleted
     })
 
-    // converting to key value pairs
+    /*    CONVERTING RDD --> (K,V)    */
 
-    // orderMap --> (orderID, orderDate) --> (1,2013-07-25 00:00:00.0)
+    // orderMap --> (orderID, orderDate)
     val orderMap = orderRdd.map(order => {
       (order.split(",")(0).toInt,order.split(",")(1))
     })
 
-    // orderItemMap -> (orderID, (productID, itemSubTotal)) --> (1,(957,299.98))
+    // orderItemMap -> (orderID, (productID, order_itemSubTotal))
     val orderItemMap = orderItemsRdd.map(orderItem => {
       (orderItem.split(",")(1).toInt, (orderItem.split(",")(2).toInt, orderItem.split(",")(4).toFloat)) })
 
-    // Joining Order & OrderItems data
+    /*    JOINING (K,V)     */
     val ordersJoin = orderMap.join(orderItemMap)
     val ordersLeftJoin = orderMap.leftOuterJoin(orderItemMap)
 
@@ -64,20 +63,27 @@ object ProductRevenue {
     val t = (24688,("2013-12-25 00:00:00.0",None))
     val ordersRejectedMap = ordersLeftJoin.filter( missingorder =>  missingorder._2._2 == None)
 
-    ordersRejectedMap.take(10).foreach(println)
-
-    // ordersJoin(K,V) --> (orderID, (orderDate ,(productID, itemSubTotal))) --> (_1, (_2.1, (_2._2._1, _2._2._2)))
-
-    // aggregate to get daily revenue per product
-    // we have to get data in this structure from ordersJoin(K,V) --> ((orderDate, productID), itemSubTotal)
-
+    // ordersJoin(K,V) --> (orderID, (orderDate ,(productID, order_itemSubTotal))) --> (_1, (_2.1, (_2._2._1, _2._2._2)))
+    // orderJoinMap(K,V) --> ((orderDate, productID), order_itemSubTotal)
     val orderJoinMap = ordersJoin.map( order => ((order._2._1, order._2._2._1),(order. _2._2._2)))
+
+    /*    REDUCE-BY-KEY      */
+    // dailyRevenuePerProductID(K,V) --> ((orderDate, productID), sum(order_itemSubTotal))
     val dailyRevenuePerProductID = orderJoinMap.reduceByKey((total, revenue) => total + revenue)
 
-    // previewing the data
-    dailyRevenuePerProductID.take(100).foreach(println)
-    // previewing the data in sorted order
-    dailyRevenuePerProductID.sortByKey().take(100).foreach(println)
+    /*    AGGREGATE-BY-KEY      */
+    /*    aggregateByKey(initialize tuple)(combiner logic)(reducer logic)   */
+
+    // daily revenue of the product and the number of time the product was purchased in a day
+    // dailyRevenueABK(K,V) --> ((orderDate, productID), (sum(order_itemSubTotal), count(productID)))
+    val dailyRevenueABK = orderJoinMap.aggregateByKey((0.0,0))(
+      (i,revenue) => (i._1 + revenue, i._2 + 2),
+        (i1,i2) => (i1._1 + i2._1, i1._2 + i2._2)
+    )
+
+    /*    PREVIEWING DATA      */
+    dailyRevenueABK.sortByKey().take(100).foreach(println)
+
   }
 
 }
