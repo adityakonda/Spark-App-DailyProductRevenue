@@ -45,7 +45,6 @@ object ProductRevenue {
     })
 
     /*    CONVERTING RDD --> (K,V)    */
-
     // orderMap --> (orderID, orderDate)
     val orderMap = orderRdd.map(order => {
       (order.split(",")(0).toInt,order.split(",")(1))
