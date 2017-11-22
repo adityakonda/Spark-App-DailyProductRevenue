@@ -111,7 +111,7 @@ object ProductRevenue {
     /*    PREVIEWING DATA      */
     //dailyRevenuePerProductNameSorted.take(100).foreach(println)
 
-    /*    SAVING DATA      */
+    /*    SAVING DATA HDFS    */
     dailyRevenuePerProductNameSorted.saveAsTextFile("/user/root/dailyRevenuePerProductNameSorted")
 
   }
