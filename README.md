@@ -13,3 +13,9 @@
   <img width="700" height="350" src="https://user-images.githubusercontent.com/7428555/33091792-1f402aa2-cec6-11e7-981b-0781cb991dd7.PNG">
 </p>
 
+- **Stage 0: **
+- **Stage 1: **
+- **Stage 2: **
+- **Stage 3: **
+- **Stage 4: **
+
