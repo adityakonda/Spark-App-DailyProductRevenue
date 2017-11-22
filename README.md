@@ -20,4 +20,14 @@
 - **Stage 4:** Reading **product** data from Local File System and converting to (K,V) *productRDDMap(K,V) --> (productID, productName)*
 - **Stage 5:** Joining dailyRevenuePerProductIDMap(K,V) & productRDDMap(K,V) --> *dailyRevenuePerProductNameLocal(K,V) --> ((orderDate, productName), sum(order_itemSubTotal))*
 
+## Joining Data using Broadcast Variables
+<p align="center">
+  <img width="700" height="350" src="https://user-images.githubusercontent.com/7428555/33142228-b135e1b4-cf83-11e7-9d21-2cc923e9412c.PNG">
+</p>
+
+- **Stage 0:**
+- **Stage 1:**
+- **Stage 2:**
+- **Stage 3:**
+
 
