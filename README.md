@@ -7,15 +7,17 @@
 </p>
 
 
-## Application DAG
+## Joining Data without using Broadcast Variables
 
 <p align="center">
   <img width="700" height="350" src="https://user-images.githubusercontent.com/7428555/33091792-1f402aa2-cec6-11e7-981b-0781cb991dd7.PNG">
 </p>
 
-- **Stage 0: **
-- **Stage 1: **
-- **Stage 2: **
-- **Stage 3: **
-- **Stage 4: **
+- **Stage 0:** Reading **orders** data from HDFS and convering into (K,V) --> *orderMap --> (orderID, orderDate)*
+- **Stage 1:** Reading **order_items** data from HDFS and convering into (K,V) --> *orderItemMap -> (orderID, (productID, order_itemSubTotal))*
+- **Stage 2:** Joining orderMap & orderItemMap --> *ordersJoin(K,V) --> (orderID, (orderDate ,(productID, order_itemSubTotal)))* and convering into (K,V) --> *orderJoinMap(K,V) --> ((orderDate, productID), order_itemSubTotal)*
+- **Stage 3:** grouping orderJoinMap(K,V) and aggregating the oroduct revenue --> *dailyRevenuePerProductID(K,V) --> ((orderDate, productID), sum(order_itemSubTotal))* and converting to (K,V) --> *dailyRevenuePerProductIDMap(K,V) --> (productID, (orderDate, sum(order_itemSubTotal)))*
+- **Stage 4:** Reading **product** data from Local File System and converting to (K,V) *productRDDMap(K,V) --> (productID, productName)*
+- **Stage 5:** Joining dailyRevenuePerProductIDMap(K,V) & productRDDMap(K,V) --> *dailyRevenuePerProductNameLocal(K,V) --> ((orderDate, productName), sum(order_itemSubTotal))*
+
 
