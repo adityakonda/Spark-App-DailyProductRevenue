@@ -109,7 +109,10 @@ object ProductRevenue {
     val dailyRevenuePerProductNameSorted = dailyRevenuePerProductName.sortByKey().map(record => record._2.productIterator.mkString(","))
 
     /*    PREVIEWING DATA      */
-    dailyRevenuePerProductNameSorted.take(100).foreach(println)
+    //dailyRevenuePerProductNameSorted.take(100).foreach(println)
+
+    /*    SAVING DATA      */
+    dailyRevenuePerProductNameSorted.saveAsTextFile("/user/root/dailyRevenuePerProductNameSorted")
 
   }
 

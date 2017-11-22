@@ -4,7 +4,7 @@
 		module="spark_applications_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20171025175111"
+		publication="20171122153500"
 	>
 		<description>
 		Spark_Applications
