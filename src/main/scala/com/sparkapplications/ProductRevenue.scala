@@ -82,7 +82,7 @@ object ProductRevenue {
 
     /*    JOINING DATA WITHOUT BROADCAST VARIABLES      */
 
-    // productRDDMap(K,V) --> (productID, productName)
+    /*// productRDDMap(K,V) --> (productID, productName)
     val productRDDMap = productRdd.map( product => (product.split(",")(0).toInt, product.split(",")(2)))
     val dailyRevenuePerProductIDMap = dailyRevenuePerProductID.map( record =>
       (record._1._2, (record._1._1, record._2))
@@ -92,11 +92,11 @@ object ProductRevenue {
     val dailyRevenuePerProductNameLocal = productRDDMap.join(dailyRevenuePerProductIDMap)
 
     /*    PREVIEWING DATA      */
-    dailyRevenuePerProductNameLocal.take(100).foreach(println)
+    dailyRevenuePerProductNameLocal.take(100).foreach(println)*/
 
     /*    JOINING DATA WITH BROADCAST VARIABLES      */
 
-   /* val productLocalMap = productList.map( product => (product.split(",")(0).toInt, product.split(",")(2))).toMap
+    val productLocalMap = productList.map( product => (product.split(",")(0).toInt, product.split(",")(2))).toMap
     val broadcastVariable = sc.broadcast(productLocalMap)
 
     // dailyRevenuePerProductName(K,V) --> ((orderDate, sum(order_itemSubTotal)) , productName)
@@ -107,8 +107,7 @@ object ProductRevenue {
     )
 
     /*    PREVIEWING DATA      */
-
-    dailyRevenuePerProductName.take(100).foreach(println)*/
+    dailyRevenuePerProductName.take(100).foreach(println)
 
   }
 
