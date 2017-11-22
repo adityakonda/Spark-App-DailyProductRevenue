@@ -20,8 +20,8 @@ object ProductRevenue {
     sc.setLogLevel("WARN")
 
     /*    READING FROM LOCAL FILE SYSTEM   */
-    val productList = Source.fromFile("/root/aditya/data/retail_db/products/part-00000").getLines
-    val productRdd = sc.parallelize(productList.toList)
+    val productList = Source.fromFile("/root/aditya/data/retail_db/products/part-00000").getLines.toList
+    val productRdd = sc.parallelize(productList)
 
     /*    READING FROM HDFS   */
     val orderRdd = sc.textFile("/user/root/retail_db/orders/")
@@ -32,7 +32,7 @@ object ProductRevenue {
     val orderNonCompleted = sc.accumulator(0,"Orders in-completed Count")
 
     /*    FILTERING DATA    */
-    val ordersFiltered = orderRdd.filter( order => {
+    val ordersFilteredOnCompleted = orderRdd.filter( order => {
 
       val isCompleted = order.split(",")(3) == "COMPLETED" || order.split(",")(3) == "CLOSED"
 
@@ -80,9 +80,35 @@ object ProductRevenue {
         (i1,i2) => (i1._1 + i2._1, i1._2 + i2._2)
     )
 
-    /*    PREVIEWING DATA      */
-    dailyRevenueABK.sortByKey().take(100).foreach(println)
+    /*    JOINING DATA WITHOUT BROADCAST VARIABLES      */
 
+    // productRDDMap(K,V) --> (productID, productName)
+    val productRDDMap = productRdd.map( product => (product.split(",")(0).toInt, product.split(",")(2)))
+    val dailyRevenuePerProductIDMap = dailyRevenuePerProductID.map( record =>
+      (record._1._2, (record._1._1, record._2))
+    )
+
+    // dailyRevenuePerProductNameLocal(K,V) --> ((orderDate, productName), sum(order_itemSubTotal))
+    val dailyRevenuePerProductNameLocal = productRDDMap.join(dailyRevenuePerProductIDMap)
+
+    /*    PREVIEWING DATA      */
+    dailyRevenuePerProductNameLocal.take(100).foreach(println)
+
+    /*    JOINING DATA WITH BROADCAST VARIABLES      */
+
+   /* val productLocalMap = productList.map( product => (product.split(",")(0).toInt, product.split(",")(2))).toMap
+    val broadcastVariable = sc.broadcast(productLocalMap)
+
+    // dailyRevenuePerProductName(K,V) --> ((orderDate, sum(order_itemSubTotal)) , productName)
+    val dailyRevenuePerProductName = dailyRevenuePerProductID.map( record =>
+      {
+        ((record._1._1, record._2) , broadcastVariable.value.get(record._1._2).get)
+      }
+    )
+
+    /*    PREVIEWING DATA      */
+
+    dailyRevenuePerProductName.take(100).foreach(println)*/
 
   }
 

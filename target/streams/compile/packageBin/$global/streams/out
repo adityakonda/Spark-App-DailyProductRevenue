@@ -1,5 +1,7 @@
 [0m[[0minfo[0m] [0mPackaging C:\Users\adity\IdeaProjects\Git_Projects\Spark_Applications\target\scala-2.11\spark_applications_2.11-1.0.jar ...[0m
 [0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	com\sparkapplications\ProductRevenue$$anonfun$9.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\adity\IdeaProjects\Git_Projects\Spark_Applications\target\scala-2.11\classes\com\sparkapplications\ProductRevenue$$anonfun$9.class[0m
 [0m[[0mdebug[0m] [0m	com\coreconcepts\threads\StartingThreads_3$1.class[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\adity\IdeaProjects\Git_Projects\Spark_Applications\target\scala-2.11\classes\com\coreconcepts\threads\StartingThreads_3$1.class[0m
 [0m[[0mdebug[0m] [0m	com\scalaapplication\Driver.class[0m
@@ -12,6 +14,8 @@
 [0m[[0mdebug[0m] [0m	  C:\Users\adity\IdeaProjects\Git_Projects\Spark_Applications\target\scala-2.11\classes\com\scalaapplication\Functions_1.class[0m
 [0m[[0mdebug[0m] [0m	com\scalaapplication\Sample.class[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\adity\IdeaProjects\Git_Projects\Spark_Applications\target\scala-2.11\classes\com\scalaapplication\Sample.class[0m
+[0m[[0mdebug[0m] [0m	com\sparkapplications\ProductRevenue$$anonfun$10.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\adity\IdeaProjects\Git_Projects\Spark_Applications\target\scala-2.11\classes\com\sparkapplications\ProductRevenue$$anonfun$10.class[0m
 [0m[[0mdebug[0m] [0m	com\sparkapplications\WordCount.class[0m
 [0m[[0mdebug[0m] [0m	  C:\Users\adity\IdeaProjects\Git_Projects\Spark_Applications\target\scala-2.11\classes\com\sparkapplications\WordCount.class[0m
 [0m[[0mdebug[0m] [0m	com\coreconcepts\threads\SynchronizedKeyword.class[0m

@@ -1,8 +1,16 @@
 
 1   Launching ProductRevenue Spark Application
+
 spark-submit \
 --class com.sparkapplications.ProductRevenue \
 --num-executors 1 \
 --executor-memory 800M \
-/root/aditya/spark-applications/Spark_Applications/target/scala-2.11
+/root/aditya/spark-applications/Spark_Applications/target/scala-2.11/spark_applications_2.11-1.0.jar
 
+2   Launching Spark-shell
+
+spark-shell --master yarn \
+--deploy-mode client \
+--conf spark.ui.port=12322 \
+--num-executors 1 \
+--executor-memory 800M
