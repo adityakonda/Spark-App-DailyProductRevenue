@@ -25,9 +25,9 @@
   <img width="700" height="350" src="https://user-images.githubusercontent.com/7428555/33142228-b135e1b4-cf83-11e7-9d21-2cc923e9412c.PNG">
 </p>
 
-- **Stage 0:**
-- **Stage 1:**
-- **Stage 2:**
-- **Stage 3:**
+- **Stage 0:** Reading **orders** data from HDFS and convering into (K,V) --> *orderMap --> (orderID, orderDate)*
+- **Stage 1:** Reading **order_items** data from HDFS and convering into (K,V) --> *orderItemMap -> (orderID, (productID, order_itemSubTotal))*
+- **Stage 2:** Joining orderMap & orderItemMap --> *ordersJoin(K,V) --> (orderID, (orderDate ,(productID, order_itemSubTotal)))* and convering into (K,V) --> *orderJoinMap(K,V) --> ((orderDate, productID), order_itemSubTotal)*
+- **Stage 3:** grouping orderJoinMap(K,V) and aggregating the oroduct revenue --> *dailyRevenuePerProductID(K,V) --> ((orderDate, productID), sum(order_itemSubTotal))* and converting to (K,V) using broadcast-variable(**product**) -->  *dailyRevenuePerProductName(K,V) --> ((orderDate, sum(order_itemSubTotal)) , productName)*
 
 
