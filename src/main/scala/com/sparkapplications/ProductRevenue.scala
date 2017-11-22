@@ -82,7 +82,7 @@ object ProductRevenue {
 
     /*    JOINING DATA WITHOUT BROADCAST VARIABLES      */
 
-    /*// productRDDMap(K,V) --> (productID, productName)
+    // productRDDMap(K,V) --> (productID, productName)
     val productRDDMap = productRdd.map( product => (product.split(",")(0).toInt, product.split(",")(2)))
     val dailyRevenuePerProductIDMap = dailyRevenuePerProductID.map( record =>
       (record._1._2, (record._1._1, record._2))
@@ -91,7 +91,7 @@ object ProductRevenue {
     // dailyRevenuePerProductNameLocal(K,V) --> ((orderDate, productName), sum(order_itemSubTotal))
     val dailyRevenuePerProductNameLocal = productRDDMap.join(dailyRevenuePerProductIDMap)
 
-    /*    PREVIEWING DATA      */
+    /*    PREVIEWING DATA
     dailyRevenuePerProductNameLocal.take(100).foreach(println)*/
 
     /*    JOINING DATA WITH BROADCAST VARIABLES      */
@@ -99,15 +99,17 @@ object ProductRevenue {
     val productLocalMap = productList.map( product => (product.split(",")(0).toInt, product.split(",")(2))).toMap
     val broadcastVariable = sc.broadcast(productLocalMap)
 
-    // dailyRevenuePerProductName(K,V) --> ((orderDate, sum(order_itemSubTotal)) , productName)
+    // dailyRevenuePerProductName(K,V) --> ((orderDate, - sum(order_itemSubTotal)) , (orderDate, sum(order_itemSubTotal), productName))
     val dailyRevenuePerProductName = dailyRevenuePerProductID.map( record =>
       {
-        ((record._1._1, record._2) , broadcastVariable.value.get(record._1._2).get)
+        ((record._1._1, -record._2) , (record._1._1, record._2,broadcastVariable.value.get(record._1._2).get))
       }
     )
 
+    val dailyRevenuePerProductNameSorted = dailyRevenuePerProductName.sortByKey().map(record => record._2.productIterator.mkString(","))
+
     /*    PREVIEWING DATA      */
-    dailyRevenuePerProductName.take(100).foreach(println)
+    dailyRevenuePerProductNameSorted.take(100).foreach(println)
 
   }
 
