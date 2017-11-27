@@ -1,0 +1,101 @@
+-----------------------------------------------------------------------------------------------------
+*** Create HIVE Database and Tables in Text file format ***
+-----------------------------------------------------------------------------------------------------
+
+1.	Create a database
+	
+		CREATE DATABASE retail_db_textfile;
+
+2.	Creating orders tables
+
+		CREATE TABLE orders (
+		order_id int,
+		order_date string,
+		order_customer_id int,
+		order_status string
+		)
+		ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+		STORED AS TEXTFILE;
+
+3.	Creating order_items 
+
+		CREATE TABLE order_items (
+		order_item_id int,
+		order_item_order_id int,
+		order_item_product_id int,
+		order_item_quantity smallint,
+		order_item_subtotal float,
+		order_item_product_price float
+		)
+		ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+		STORED AS TEXTFILE;
+
+
+-----------------------------------------------------------------------------------------------------
+*** Loading data into Hive tables ***
+-----------------------------------------------------------------------------------------------------
+		
+1.	load data local inpath '/ LOCAL-FILE-SYTEM-PATH /' into table <TABLE NAME>;
+
+
+-----------------------------------------------------------------------------------------------------
+*** Create HIVE Database and Tables in ORC format ***
+-----------------------------------------------------------------------------------------------------
+
+1.	Create a database
+	
+		CREATE DATABASE retail_db_orc;
+
+2.	Creating orders tables
+
+		CREATE TABLE orders (
+		order_id int,
+		order_date string,
+		order_customer_id int,
+		order_status string
+		)
+		STORED AS orc;
+
+3.	Creating order_items 
+
+		CREATE TABLE order_items (
+		order_item_id int,
+		order_item_order_id int,
+		order_item_product_id int,
+		order_item_quantity smallint,
+		order_item_subtotal float,
+		order_item_product_price float
+		)
+		STORED AS orc;
+		
+-----------------------------------------------------------------------------------------------------
+*** INSERT DATA FROM STAGING TABLES(i.e. TEXTFILE) TO FINAL TABLE(i.e. ORC Tables) ***
+-----------------------------------------------------------------------------------------------------
+
+1. Inserting from staging table TO final table(i.e. ORC Tables)
+
+	insert into table retail_db_textfile.orders select * from retail_db_orc.orders;
+
+-----------------------------------------------------------------------------------------------------
+*** HIVE UDF'S ***
+-----------------------------------------------------------------------------------------------------
+
+1.	Display all function in Hive. 
+
+		show functions;
+
+2.	Describe function length;
+	
+		select order_status, length(order_status) from orders limit 100;
+
+-----------------------------------------------------------------------------------------------------
+*** HIVE CONFIGURATION FILE ***
+-----------------------------------------------------------------------------------------------------
+
+1.	Hive conf files 
+
+	/etc/hive/conf/hive-site.xml
+	
+	
+	
+
