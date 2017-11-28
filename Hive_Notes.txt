@@ -77,7 +77,7 @@
 	insert into table retail_db_textfile.orders select * from retail_db_orc.orders;
 
 -----------------------------------------------------------------------------------------------------
-*** HIVE UDF'S ***
+*** HIVE UDF'S - STRING MANIPULATION ***
 -----------------------------------------------------------------------------------------------------
 
 1.	Display all function in Hive. 
@@ -87,7 +87,127 @@
 2.	Describe function length;
 	
 		select order_status, length(order_status) from orders limit 100;
+		
+3.	Mosty commonly used UDF in Hive
 
+		substr (or) substring
+		instr
+		like
+		rlike
+		lcase (or) lower
+		ucase (or) upper
+		trim, ltrim, rtrim
+		lpad, rpad
+
+4.	Testing UDF is Hive 
+
+	substr:
+	
+			select length('Hello world')
+			select substr('Hello world',7);
+				> world
+			select substr('Hello world, How are you',7,5);
+				> world
+			select substr('Hello world, How are you',-3);
+				> you
+			select substr('Hello world, How are you',-7,3);
+				> are
+	
+	instr:
+			
+			select instr('Hello World, How are you','World');
+				> 7
+	
+	like:   
+	
+			select 'Hello World, How are you' like '%World%'
+				> true
+				
+	length & trim:
+		
+			select length(trim(' Hello World  '))
+				> 11
+				
+	lpad:
+	
+			select lpad(9, 3, '0')
+				> 009
+				
+	cast:
+	
+			select cast('12' as int)
+	
+	index & split:
+	
+			select index(split('Hello World, How are you', ' '), 4)
+				> you
+			
+	*** EXAMPLE ***
+	
+		select cast( substr(order_date, 6, 2) as int) from orders limit 1;
+			> 7
+-----------------------------------------------------------------------------------------------------
+*** HIVE UDF'S - DATE MANIPULATION ***
+-----------------------------------------------------------------------------------------------------					
+
+1.	Mosty commonly used UDF in Hive
+
+	current_date
+	current_timestamp
+	date_add
+	date_format
+	date_sub
+	datediff
+	day
+	dayofmonth
+	to_date
+	
+	to_unix_timestamp
+	to_utc_timestamp
+	from_unixtime
+	from_utc_tiemstamp
+	
+	
+
+	date_format:
+		
+		select date_format(current_date, 'y');
+			> 2017
+		select date_format(current_date, 'd');
+			> 28
+		
+	day & dayofmonth:
+	
+		select dayofmonth(current_date);
+			> 28
+		
+	current_timestamp & to_date:
+		
+		select to_date(current_timestamp);
+			> 2017-11-28
+			
+	------------------------------------------------------
+		*** UNIX TIMESTAMP ***
+	------------------------------------------------------
+	
+	to_unix_timestamp:
+		
+		select to_unix_timestamp(current_timestamp)
+			> 1511908016
+	
+	from_unixtime
+	
+		select from_unixtime(1511908016)
+			> 2017-11-28 14:26:56
+			
+	*** EXAMPLE ****
+
+		select to_date(order_date) from orders limit 10;
+		
+		select date_add(order_date, 10) from orders limit 10;
+		
+			
+	
 -----------------------------------------------------------------------------------------------------
 *** HIVE CONFIGURATION FILE ***
 -----------------------------------------------------------------------------------------------------
@@ -96,6 +216,7 @@
 
 	/etc/hive/conf/hive-site.xml
 	
+
 	
 	
 
