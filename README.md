@@ -2,7 +2,8 @@
 
 ## DailyProductRevenue in MySQL & Spark 
 
-	This application will calculate the daily product revenue that displays date in ascending order and revenue in decending order in Spark & MySQL. It also demonstrates how to reduce Stages & Task in Spark using broadcast variables. 
+This application will calculate the daily product revenue that displays date in ascending order and revenue in decending order in Spark & MySQL. It also demonstrates how to reduce Stages & Task in Spark using broadcast variables. 
+	
 
 ## Retail Database Schema 
 
