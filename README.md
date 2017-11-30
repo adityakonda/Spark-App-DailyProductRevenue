@@ -1,4 +1,5 @@
-# Spark Application
+# Daily Product Revenue Application
+
 
 ## Retail Database Schema 
 
@@ -6,6 +7,21 @@
   <img width="700" height="450" src="https://user-images.githubusercontent.com/7428555/33092798-37222b68-cec9-11e7-8595-d0b2f4a1333b.jpg">
 </p>
 
+
+
+```
+
+SELECT  o.order_date, sum(oi.order_item_subtotal), p.product_name
+FROM 
+ (
+	retail_db.order_items oi JOIN retail_db.orders o ON oi.order_item_order_id = o.order_id
+	JOIN
+	retail_db.products p ON p.product_id = oi.order_item_product_id
+  )
+ GROUP BY o.order_date, p.product_name
+ ORDER BY o.order_date, sum(oi.order_item_subtotal) DESC;
+
+ ```
 
 ## Joining Data without using Broadcast Variables
 
