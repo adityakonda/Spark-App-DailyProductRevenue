@@ -20,12 +20,12 @@ object ProductRevenue {
     sc.setLogLevel("WARN")
 
     /*    READING FROM LOCAL FILE SYSTEM   */
-    val productList = Source.fromFile("/root/aditya/data/retail_db/products/part-00000").getLines.toList
+    val productList = Source.fromFile("/home/cloudera/aditya/data/retail_db/products/part-00000").getLines.toList
     val productRdd = sc.parallelize(productList)
 
     /*    READING FROM HDFS   */
-    val orderRdd = sc.textFile("/user/root/retail_db/orders/")
-    val orderItemsRdd = sc.textFile("/user/root/retail_db/order_items")
+    val orderRdd = sc.textFile("/user/cloudera/retail_db/orders/")
+    val orderItemsRdd = sc.textFile("/user/cloudera/retail_db/order_items")
 
     /*    ACCUMULATORS    */
     val orderCompleted = sc.accumulator(0,"Orders Completed Count")
@@ -112,7 +112,7 @@ object ProductRevenue {
     //dailyRevenuePerProductNameSorted.take(100).foreach(println)
 
     /*    SAVING DATA HDFS    */
-    dailyRevenuePerProductNameSorted.saveAsTextFile("/user/root/dailyRevenuePerProductNameSorted")
+    dailyRevenuePerProductNameSorted.saveAsTextFile("/user/cloudera/dailyRevenuePerProductNameSorted")
 
   }
 
