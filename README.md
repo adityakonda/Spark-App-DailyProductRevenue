@@ -1,5 +1,8 @@
 # Daily Product Revenue Application
 
+## DailyProductRevenue in MySQL & Spark 
+
+	This application will calculate the daily product revenue that displays date in ascending order and revenue in decending order in Spark & MySQL. It also demonstrates how to reduce Stages & Task in Spark using broadcast variables. 
 
 ## Retail Database Schema 
 
@@ -7,7 +10,7 @@
   <img width="700" height="450" src="https://user-images.githubusercontent.com/7428555/33092798-37222b68-cec9-11e7-8595-d0b2f4a1333b.jpg">
 </p>
 
-
+### MySQL - DailyProductRevenue
 
 ```
 
@@ -23,7 +26,7 @@ FROM
 
  ```
 
-## Joining Data without using Broadcast Variables
+### Spark - DailyProductRevenue - Joining Data without using Broadcast Variables
 
 <p align="center">
   <img width="700" height="350" src="https://user-images.githubusercontent.com/7428555/33091792-1f402aa2-cec6-11e7-981b-0781cb991dd7.PNG">
@@ -36,7 +39,7 @@ FROM
 - **Stage 4:** Reading **product** data from Local File System and converting to (K,V) *productRDDMap(K,V) --> (productID, productName)*
 - **Stage 5:** Joining dailyRevenuePerProductIDMap(K,V) & productRDDMap(K,V) --> *dailyRevenuePerProductNameLocal(K,V) --> ((orderDate, productName), sum(order_itemSubTotal))*
 
-## Joining Data using Broadcast Variables
+### Spark - DailyProductRevenue - Joining Data using Broadcast Variables
 <p align="center">
   <img width="700" height="350" src="https://user-images.githubusercontent.com/7428555/33142228-b135e1b4-cf83-11e7-9d21-2cc923e9412c.PNG">
 </p>
