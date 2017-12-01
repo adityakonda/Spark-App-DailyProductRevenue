@@ -27,6 +27,8 @@ FROM
 
  ```
 
+[Spark - DailyProductRevenue Scala Application Link:](https://github.com/adityakonda/Spark-App-DailyProductRevenue/blob/master/src/main/scala/com/sparkapplications/ProductRevenue.scala)
+
 ### Spark - DailyProductRevenue - Joining Data without using Broadcast Variables
 
 <p align="center">
