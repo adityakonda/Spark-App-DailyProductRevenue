@@ -42,7 +42,7 @@ object ProductRevenueDataFrames {
 
     hiveContext.setConf("spark.sql.shuffle.partitions","2")
 
-    hiveContext.sql("CREATE TABLE daily_revenue_ " +
+    hiveContext.sql("CREATE TABLE daily_revenue " +
       "(order_date string, " +
       "product_name string, " +
       "daily_revenue_per_product float) " +
