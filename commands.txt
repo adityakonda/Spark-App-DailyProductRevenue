@@ -2,10 +2,10 @@
 1   Launching ProductRevenue Spark Application
 
 spark-submit \
---class com.sparkapplications.ProductRevenue \
+--class com.sparkapplications.ProductRevenueDataFrames \
 --num-executors 1 \
 --executor-memory 800M \
-/root/aditya/spark-applications/Spark_Applications/target/scala-2.11/spark_applications_2.11-1.0.jar
+/home/cloudera/aditya/Spark_Applications/target/scala-2.10/spark_applications_2.10-1.0.jar
 
 2   Launching Spark-shell
 
