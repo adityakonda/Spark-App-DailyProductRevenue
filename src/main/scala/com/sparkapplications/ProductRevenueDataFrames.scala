@@ -71,7 +71,7 @@ object ProductRevenueDataFrames {
         "JOIN products p ON p.product_id = oi.order_item_product_id " +
         "WHERE o.order_status IN ('COMPLETE','CLOSED') " +
         "GROUP BY o.order_date, p.product_name " +
-        "ORDER BY o.order_date, daily_revenue_per_product")
+        "ORDER BY o.order_date, daily_revenue_per_product DESC")
 
     /*    INGESTING  daily_revenue_per_product DATA INTO HIVE TABLE daily_revenue   */
     daily_revenue_per_product.insertInto("retail_db_orc.daily_revenue")
