@@ -40,16 +40,24 @@ object ProductRevenueDataFrames {
 
     hiveContext.sql("use retail_db_orc")
 
-    val daily_revenue_per_product = hiveContext
-                    .sql("SELECT o.order_date, p.product_name, sum(oi.order_item_subtotal) daily_revenue_per_product " +
-                    "FROM orders o JOIN order_items oi " +
-                    "ON o.order_id = oi.order_item_order_id " +
-                    "JOIN products p ON p.product_id = oi.order_item_product_id " +
-                    "WHERE o.order_status IN ('COMPLETE','CLOSED') " +
-                    "GROUP BY o.order_date, p.product_name " +
-                    "ORDER BY o.order_date, daily_revenue_per_product")
+    hiveContext.setConf("spark.sql.shuffle.partitions","2")
 
-    daily_revenue_per_product.show(5)
+    hiveContext.sql("CREATE TABLE daily_revenue_ " +
+      "(order_date string, " +
+      "product_name string, " +
+      "daily_revenue_per_product float) " +
+      "STORED AS orc")
+
+    val daily_revenue_per_product = hiveContext
+      .sql("SELECT o.order_date, p.product_name, sum(oi.order_item_subtotal) daily_revenue_per_product " +
+        "FROM orders o JOIN order_items oi " +
+        "ON o.order_id = oi.order_item_order_id " +
+        "JOIN products p ON p.product_id = oi.order_item_product_id " +
+        "WHERE o.order_status IN ('COMPLETE','CLOSED') " +
+        "GROUP BY o.order_date, p.product_name " +
+        "ORDER BY o.order_date, daily_revenue_per_product")
+
+    daily_revenue_per_product.insertInto("retail_db_orc.daily_revenue")
 
   }
 }
