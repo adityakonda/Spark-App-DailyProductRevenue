@@ -22,3 +22,8 @@ libraryDependencies += "org.apache.spark" %% "spark-hive" % "1.6.0"
 
 // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "1.6.0"
+
+// Tess Version
+libraryDependencies ++= Seq(
+  "net.sourceforge.tess4j" % "tess4j" % "3.4.2"
+)

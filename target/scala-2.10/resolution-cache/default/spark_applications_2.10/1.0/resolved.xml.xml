@@ -4,7 +4,7 @@
 		module="spark_applications_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20171208173400"
+		publication="20171213123153"
 	>
 		<description>
 		Spark_Applications
@@ -40,5 +40,6 @@
 		<dependency org="org.apache.spark" name="spark-streaming_2.10" rev="1.6.0" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-hive_2.10" rev="1.6.0" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-sql_2.10" rev="1.6.0" conf="compile->default(compile)"/>
+		<dependency org="net.sourceforge.tess4j" name="tess4j" rev="3.4.2" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

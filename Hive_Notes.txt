@@ -284,8 +284,27 @@
 		ON o.order_id = oi.order_item_id 
 		where o.order_status in ('COMPLETE','CLOSED')
 		GROUP BY  o.order_date;
-	
+		
+-----------------------------------------------------------------------------------------------------
+*** ANALYTIC FUNCTION & AGGREGRATION ***
+-----------------------------------------------------------------------------------------------------
 
+1.	pct_revenue: % of revenue generated with in the order  
+
+		SELECT * FROM (
+		
+			SELECT o.order_id, o.order_date, o.order_status, oi.order_item_subtotal, 
+			round(sum(oi.order_item_subtotal) over (partition by o.order_id), 2) order_revenue,
+			(round(( (oi.order_item_subtotal/round(sum(oi.order_item_subtotal) over (partition by o.order_id), 2))* 100),2)) pct_revenue
+			FROM orders o JOIN order_items oi 
+			ON o.order_id = oi.order_item_order_id 
+			where o.order_status in ('COMPLETE','CLOSED')
+
+			   ) q
+			   
+		WHERE order_revenue >= 1000
+		ORDER BY q.order_date, q.order_revenue DESC;
+	
 
 -----------------------------------------------------------------------------------------------------
 *** Notes ***
@@ -313,19 +332,8 @@
 	Data need to be sorted by ascending order by data and then descending order by revenue computed for each product for each day
 	
 		SORT data by order_date in ascending & daily_revenue per product in descending order
-		
 	
------------------------------------------------------------------------------------------------------
-*** PROBLEM STATEMENT ***
------------------------------------------------------------------------------------------------------
-
-SELECT o.order_date, p.product_name, sum(oi.order_item_subtotal) daily_revenue_per_product
-FROM orders o JOIN order_items oi 
-ON o.order_id = oi.order_item_order_id
-JOIN products p ON p.product_id = oi.order_item_product_id
-WHERE o.order_status IN ('COMPLETE','CLOSED')
-GROUP BY o.order_date, p.product_name
-ORDER BY o.order_date, daily_revenue_per_product;
+	
 	
 	
 	
